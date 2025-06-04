@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'widgets/custom_info_card.dart';
+import 'widgets/custom_title_text.dart';
+
 void main() {
   runApp(BusniessCard());
 }
@@ -25,16 +28,16 @@ class BusniessCard extends StatelessWidget {
                 backgroundImage: AssetImage("images/cat.jpg"),
               ),
             ),
-            const Text(
-              "Mohammed Bin Talib",
+            CustomTitleText(
+              text: "Mohammed Bin Talib",
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 32,
                 fontFamily: "Pacifico",
               ),
             ),
-            const Text(
-              "FLUTTER DEVELOPER",
+            CustomTitleText(
+              text: "FLUTTER DEVELOPER",
               style: TextStyle(
                 color: Color(0xFF6C8090),
                 fontSize: 18,
@@ -47,26 +50,8 @@ class BusniessCard extends StatelessWidget {
               indent: 60,
               endIndent: 60,
             ),
-            Card(
-              margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-              child: ListTile(
-                leading: Icon(Icons.phone, size: 32, color: Color(0xFF2B475E)),
-                title: const Text(
-                  "+967 123456789",
-                  style: TextStyle(fontSize: 20),
-                ),
-              ),
-            ),
-            Card(
-              margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-              child: ListTile(
-                leading: Icon(Icons.email, size: 32, color: Color(0xFF2B475E)),
-                title: const Text(
-                  "mohammed@gmail.com",
-                  style: TextStyle(fontSize: 20),
-                ),
-              ),
-            ),
+            CustomInfoCard(icon: Icons.phone, text: "+967 123456789"),
+            CustomInfoCard(icon: Icons.email, text: "mohammed@gmail.com"),
           ],
         ),
       ),
